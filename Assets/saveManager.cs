@@ -16,11 +16,23 @@ public class saveManager : MonoBehaviour
         
     }
 
-    public void loadSave () {
-
+    public void saveSave (string KeyName, string Value) {
+        PlayerPrefs.SetString(KeyName, Value);
     }
 
-    public void saveSave () {
-        
+    public void loadSave (string KeyName, string Value) {
+        PlayerPrefs.GetString(KeyName, Value);
+    }
+
+    public void saveSave1 () {
+        saveSave("saveSaveSave", "save1");
+    }
+
+    public void saveSave2 () {
+        saveSave("saveSaveSave", "save2");
+    }
+    
+    public void saveSave3 () {
+        saveSave("saveSaveSave", "save3");
     }
 }
