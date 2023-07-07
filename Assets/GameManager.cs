@@ -20,9 +20,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        money = PlayerPrefs.GetFloat("moneyYouGot");
-        hiredEmployees = PlayerPrefs.GetFloat("hiredEmployeesStatus");
-        Computer = PlayerPrefs.GetFloat("ComputerStatus");
+        money = PlayerPrefs.GetFloat("moneyYouGot", 0);
+        hiredEmployees = PlayerPrefs.GetFloat("hiredEmployeesStatus", 0);
+        Computer = PlayerPrefs.GetFloat("ComputerStatus", 1);
+
+        if (hiredEmployees == 1) {
+            hiredEmployeesButton.text = "Sold";
+        }
+        if (Computer == 2) {
+            ComputerButton.text = "Sold";
+        }
     }
 
     // Update is called once per frame
